@@ -1,23 +1,19 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
+import 'react-native-gesture-handler';
 import React from 'react';
-import { SafeAreaView, View } from 'react-native';
+import { View, StatusBar } from 'react-native';
+import AppRoutes from './routes/AppRoutes';
 
 const App = () => {
   return (
-    <>
-      <SafeAreaView>
-        <View />
-      </SafeAreaView>
-    </>
+    <View style={{ flex: 1 }}>
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor="transparent"
+        translucent
+      />
+
+      <AppRoutes />
+    </View>
   );
 };
 
