@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, TextInputProps } from 'react-native';
+import { TextInputProps } from 'react-native';
 
 import { Field, ActivePlaceholderText } from './styles';
 import { TEXT_FIELD } from '../../utils/Colors';
