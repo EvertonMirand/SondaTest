@@ -2,23 +2,23 @@ import styled from 'styled-components/native';
 
 import logo from '../../assets/logo.jpg';
 
-import { BUTTON, BUTTON_TEXT, ERROR_TEXT } from '../../utils/Colors';
-import DeviceDimension from '../../utils/DeviceDimension';
+import { BUTTON, BUTTON_TEXT, ERROR_TEXT, BORDER } from '../../utils/Colors';
+import { screenPercentage } from '../../utils/DeviceDimension';
 
 export const Container = styled.ScrollView`
   flex: 1;
   flex-grow: 1;
-  min-height: ${DeviceDimension.screenPercentage(120)}px;
+  min-height: ${screenPercentage(120)}px;
 `;
 
 export const LogoCard = styled.View`
-  height: ${DeviceDimension.screenPercentage(20)}px;
+  height: ${screenPercentage(20)}px;
   justify-content: center;
 
   align-items: center;
 
   border-bottom-width: 1px;
-  border-bottom-color: rgba(235, 235, 235, 1);
+  border-bottom-color: ${BORDER};
 `;
 
 export const Form = styled.View`
@@ -33,7 +33,7 @@ export const Logo = styled.Image.attrs({ source: logo, resizeMode: 'contain' })`
 
 export const LoginButton = styled.TouchableOpacity`
   z-index: 5;
-  height: ${DeviceDimension.screenPercentage(10)}px;
+  height: ${screenPercentage(10)}px;
 
   justify-content: center;
   align-items: center;

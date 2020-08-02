@@ -3,8 +3,10 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-import Album from '../pages/Album';
 import Login from '../pages/Login';
+
+import TabRoutes from './TabRoutes';
+import { LOGIN, TAB_ROUTES } from './RoutesContants';
 
 import { BACKGROUND } from '../utils/Colors';
 
@@ -21,7 +23,7 @@ const AppRoutes: React.FC = () => {
               backgroundColor: BACKGROUND,
             },
           }}
-          name="Login"
+          name={LOGIN}
           component={Login}
         />
         <App.Screen
@@ -31,8 +33,8 @@ const AppRoutes: React.FC = () => {
               backgroundColor: BACKGROUND,
             },
           }}
-          name="Album"
-          component={Album}
+          name={TAB_ROUTES}
+          component={TabRoutes}
         />
       </App.Navigator>
     </NavigationContainer>
