@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, Image, Text } from 'react-native';
 
 import Orientation from 'react-native-orientation';
 
-import { Container } from './styles';
+import { Container, Thumbnail } from './styles';
 import api from '../../services/api';
 import Photo from '../../models/Photo';
 import { screenWidthPercentage } from '../../utils/DeviceDimension';
 import LoadingFlatList from '../../components/LoadingFlatList';
+import EmptyFlatList from '../../components/EmptyFlatList';
 
 interface ApiRequest {
   data: Photo[];
@@ -44,14 +44,15 @@ const Feed: React.FC = () => {
           height: screenWidthPercentage(50),
         }}
         renderItem={({ item: { thumbnailUrl } }) => (
-          <Image
-            style={{ flex: 1 }}
+          <Thumbnail
             source={{
               uri: thumbnailUrl,
             }}
           />
         )}
-        ListEmptyComponent={<Text>Nenhuma foto encontrada</Text>}
+        ListEmptyComponent={
+          <EmptyFlatList>Nenhuma foto encontrada</EmptyFlatList>
+        }
       />
     </Container>
   );

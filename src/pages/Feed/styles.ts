@@ -16,3 +16,7 @@ export const Container = styled.SafeAreaView<ContainerProps>`
       align-items: center;
     `}
 `;
+
+export const Thumbnail = styled.Image`
+  flex: 1;
+`;

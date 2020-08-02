@@ -1,8 +1,9 @@
 import styled from 'styled-components/native';
 
 import { TextFieldProps } from './index';
+import { PRIMARY_COLOR } from '../../utils/Colors';
 
-const getColor = ({ color }: TextFieldProps): string => color;
+const getColor = ({ color }: TextFieldProps): string => color || PRIMARY_COLOR;
 
 interface FieldProps {
   active: boolean;
