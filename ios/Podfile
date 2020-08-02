@@ -10,7 +10,7 @@ target 'SondaTest' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
-  pod 'RNFastImage', :path => '../node_modules/react-native-fast-image'
+
 
   target 'SondaTestTests' do
     inherit! :complete
