@@ -4,9 +4,10 @@ import FAIcons from 'react-native-vector-icons/FontAwesome';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Feed from '../pages/Feed';
-import { FEED, CAMERA } from './RoutesContants';
+import { FEED, CAMERA, MORE, MORE_ROUTE } from './RoutesContants';
 import { TAB_BAR_COLOR } from '../utils/Colors';
 import Camera from '../pages/Camera';
+import MoreOptions from '../pages/MoreOptions';
 
 const Tab = createBottomTabNavigator();
 
@@ -22,14 +23,14 @@ const TabRoutes: React.FC = () => {
         },
         inactiveTintColor: '#B7B7CC',
         style: {
-          height: 120,
+          height: 100,
         },
       }}
     >
       <Tab.Screen
         options={{
           tabBarIcon: ({ color }) => (
-            <MIcons size={70} name="rss-feed" color={color} />
+            <MIcons size={50} name="rss-feed" color={color} />
           ),
           title: 'Feed de imagens',
         }}
@@ -39,13 +40,23 @@ const TabRoutes: React.FC = () => {
       <Tab.Screen
         options={{
           tabBarIcon: ({ color }) => (
-            <FAIcons size={70} name="camera" color={color} />
+            <FAIcons size={50} name="camera" color={color} />
           ),
           title: 'Camera',
           tabBarVisible: false,
         }}
         name={CAMERA}
         component={Camera}
+      />
+      <Tab.Screen
+        options={{
+          tabBarIcon: ({ color }) => (
+            <MIcons size={50} name="more-horiz" color={color} />
+          ),
+          title: MORE,
+        }}
+        name={MORE_ROUTE}
+        component={MoreOptions}
       />
     </Tab.Navigator>
   );
