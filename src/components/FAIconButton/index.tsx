@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TouchableOpacity, TouchableOpacityProps } from 'react-native';
+import { TouchableOpacityProps } from 'react-native';
 import FAIcons from 'react-native-vector-icons/FontAwesome';
 import { PRIMARY_COLOR } from '../../utils/Colors';
 import { Container } from './styles';
