@@ -4,7 +4,6 @@ import { RNCamera } from 'react-native-camera';
 
 import { TouchableOpacity, View, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import FAIcons from 'react-native-vector-icons/FontAwesome';
 
 import {
   Container,
@@ -19,13 +18,8 @@ import {
 } from './styles';
 import { CAMERA_PRIMARY } from '../../utils/Colors';
 import { getNextPosition } from '../../utils/ArrayUtils';
-
-const { back, front } = RNCamera.Constants.Type;
-const { auto, off, on, torch } = RNCamera.Constants.FlashMode;
-
-const CameraTypes = [back, front];
-
-const FlashModes = [auto, on, off, torch];
+import FAIconButton from '../../components/FAIconButton';
+import { CameraTypes, FlashModes } from '../../utils/CameraConstants';
 
 const Camera: React.FC = () => {
   const [cameraTypePosition, setCameraTypePosition] = useState(0);
@@ -61,13 +55,17 @@ const Camera: React.FC = () => {
   return (
     <Container>
       <TopButtons>
-        <TouchableOpacity onPress={onChangeCameraType}>
-          <FAIcons size={20} name="camera" color={CAMERA_PRIMARY} />
-        </TouchableOpacity>
+        <FAIconButton
+          onPress={onChangeFlashModePosition}
+          color={CAMERA_PRIMARY}
+          iconName="flash"
+        />
 
-        <TouchableOpacity onPress={onChangeFlashModePosition}>
-          <FAIcons size={20} name="flash" color={CAMERA_PRIMARY} />
-        </TouchableOpacity>
+        <FAIconButton
+          onPress={onChangeCameraType}
+          color={CAMERA_PRIMARY}
+          iconName="camera"
+        />
       </TopButtons>
       <Cam
         ref={camRef}
