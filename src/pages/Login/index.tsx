@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 
 import Orientation from 'react-native-orientation';
-import { ActivityIndicator, Alert } from 'react-native';
+import { ActivityIndicator, Alert, KeyboardAvoidingView } from 'react-native';
 import { Formik, FormikHelpers } from 'formik';
 
 import * as Yup from 'yup';
@@ -87,28 +87,29 @@ const Login: React.FC = () => {
             <LogoCard>
               <Logo />
             </LogoCard>
+            <KeyboardAvoidingView>
+              <Form>
+                <LoginTextField
+                  placeholder="Email"
+                  textContentType="emailAddress"
+                  keyboardType="email-address"
+                  onChangeText={handleChange('email')}
+                  value={email}
+                  infoText="Para acessar o app informe seu email"
+                  errorMessage={errors?.email}
+                />
 
-            <Form>
-              <LoginTextField
-                placeholder="Email"
-                textContentType="emailAddress"
-                keyboardType="email-address"
-                onChangeText={handleChange('email')}
-                value={email}
-                infoText="Para acessar o app informe seu email"
-                errorMessage={errors?.email}
-              />
-
-              <LoginTextField
-                placeholder="Senha"
-                textContentType="password"
-                onChangeText={handleChange('password')}
-                value={password}
-                secureTextEntry
-                infoText="Agora digite sua senha"
-                errorMessage={errors?.password}
-              />
-            </Form>
+                <LoginTextField
+                  placeholder="Senha"
+                  textContentType="password"
+                  onChangeText={handleChange('password')}
+                  value={password}
+                  secureTextEntry
+                  infoText="Agora digite sua senha"
+                  errorMessage={errors?.password}
+                />
+              </Form>
+            </KeyboardAvoidingView>
           </Container>
           <LoginButton onPress={handleSubmit} disabled={isLoading}>
             {!isLoading ? (

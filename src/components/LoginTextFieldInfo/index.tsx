@@ -7,9 +7,9 @@ interface LoginTextFieldInfoProps {
   children: string;
 }
 
-const LoginTextFieldInfo: React.FC = ({
+const LoginTextFieldInfo = ({
   children,
-}: LoginTextFieldInfoProps) => {
+}: LoginTextFieldInfoProps): JSX.Element => {
   const [textWithoutLastWord, setTextWithoutLastWord] = useState('');
   const [lastWord, setLastWord] = useState('');
 

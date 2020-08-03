@@ -9,7 +9,7 @@ interface LoginTextFieldProps extends TextFieldProps {
   errorMessage?: string;
 }
 
-const LoginTextField = (props: LoginTextFieldProps) => {
+const LoginTextField = (props: LoginTextFieldProps): JSX.Element => {
   const { infoText, errorMessage, style } = props;
   return (
     <Container style={style}>

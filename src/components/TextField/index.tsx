@@ -8,7 +8,7 @@ export interface TextFieldProps extends TextInputProps {
   color?: string;
 }
 
-const TextField = (props: TextFieldProps) => {
+const TextField = (props: TextFieldProps): JSX.Element => {
   const { onBlur, onFocus, placeholder, color = TEXT_FIELD } = props;
   const [isFocused, setFocused] = useState(false);
   return (

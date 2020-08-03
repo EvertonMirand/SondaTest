@@ -8,7 +8,7 @@ interface Props extends FlatListProps<any> {
   loadingColor?: string;
 }
 
-const LoadingFlatList = (props: Props) => {
+const LoadingFlatList = (props: Props): JSX.Element => {
   const { isLoading, loadingSize = 20, loadingColor = PRIMARY_COLOR } = props;
 
   return isLoading ? (
