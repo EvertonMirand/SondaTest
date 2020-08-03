@@ -20,6 +20,7 @@ import { CAMERA_PRIMARY } from '../../utils/Colors';
 import { getNextPosition } from '../../utils/ArrayUtils';
 import FAIconButton from '../../components/FAIconButton';
 import { CameraTypes, FlashModes } from '../../utils/CameraConstants';
+import { FEED } from '../../routes/RoutesContants';
 
 const Camera: React.FC = () => {
   const [cameraTypePosition, setCameraTypePosition] = useState(0);
@@ -45,7 +46,7 @@ const Camera: React.FC = () => {
       ?.takePictureAsync()
       .then(() => {
         Alert.alert('Foto tirada.', 'A foto foi tirada com sucesso.');
-        navigation.goBack();
+        navigation.navigate(FEED);
       })
       .catch(() => {
         Alert.alert('Erro ao tirar foto.', 'Ocorreu um erro ao tirar a foto.');
