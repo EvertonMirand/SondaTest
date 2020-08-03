@@ -15,6 +15,7 @@ import {
   LogoCard,
   LoginButtonText,
   Form,
+  ButtonContainer,
 } from './styles';
 
 import LoginTextField from '../../components/LoginTextField';
