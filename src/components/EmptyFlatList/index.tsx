@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Text } from 'react-native';
 
 import { Container } from './styles';
 
-const EmptyFlatList: React.FC = ({ children }) => {
+interface EmptyFlatListProps {
+  children: string;
+}
+
+const EmptyFlatList = ({ children }: EmptyFlatListProps): JSX.Element => {
   return (
     <Container>
       <Text>{children}</Text>
@@ -11,4 +15,4 @@ const EmptyFlatList: React.FC = ({ children }) => {
   );
 };
 
-export default EmptyFlatList;
+export default memo(EmptyFlatList);

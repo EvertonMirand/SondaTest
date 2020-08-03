@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import { ErrorText, Container } from './styles';
 import LoginTextFieldInfo from '../LoginTextFieldInfo';
@@ -21,4 +21,4 @@ const LoginTextField = (props: LoginTextFieldProps) => {
   );
 };
 
-export default LoginTextField;
+export default memo(LoginTextField);
