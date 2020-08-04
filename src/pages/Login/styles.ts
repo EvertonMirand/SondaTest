@@ -5,11 +5,7 @@ import logo from '../../assets/logo.jpg';
 import { BUTTON, BUTTON_TEXT, ERROR_TEXT, BORDER } from '../../utils/Colors';
 import { screenPercentage } from '../../utils/DeviceDimension';
 
-export const Container = styled.ScrollView`
-  flex: 1;
-  flex-grow: 1;
-  min-height: ${screenPercentage(120)}px;
-`;
+export const Container = styled.ScrollView``;
 
 export const LogoCard = styled.View`
   height: ${screenPercentage(20)}px;

@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 
 import Orientation from 'react-native-orientation';
-import { ActivityIndicator, Alert, KeyboardAvoidingView } from 'react-native';
+import { ActivityIndicator, Alert } from 'react-native';
+import KeyboardSpacer from 'react-native-keyboard-spacer';
 import { Formik, FormikHelpers } from 'formik';
 
 import * as Yup from 'yup';
@@ -19,6 +20,7 @@ import {
 
 import LoginTextField from '../../components/LoginTextField';
 import { TAB_ROUTES, FEED } from '../../routes/RoutesContants';
+import { screenPercentage } from '../../utils/DeviceDimension';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().email('Email invalido.').required('Email nescessario.'),
@@ -87,29 +89,28 @@ const Login: React.FC = () => {
             <LogoCard>
               <Logo />
             </LogoCard>
-            <KeyboardAvoidingView>
-              <Form>
-                <LoginTextField
-                  placeholder="Email"
-                  textContentType="emailAddress"
-                  keyboardType="email-address"
-                  onChangeText={handleChange('email')}
-                  value={email}
-                  infoText="Para acessar o app informe seu email"
-                  errorMessage={errors?.email}
-                />
+            <Form>
+              <LoginTextField
+                placeholder="Email"
+                textContentType="emailAddress"
+                keyboardType="email-address"
+                onChangeText={handleChange('email')}
+                value={email}
+                infoText="Para acessar o app informe seu email"
+                errorMessage={errors?.email}
+              />
 
-                <LoginTextField
-                  placeholder="Senha"
-                  textContentType="password"
-                  onChangeText={handleChange('password')}
-                  value={password}
-                  secureTextEntry
-                  infoText="Agora digite sua senha"
-                  errorMessage={errors?.password}
-                />
-              </Form>
-            </KeyboardAvoidingView>
+              <LoginTextField
+                placeholder="Senha"
+                textContentType="password"
+                onChangeText={handleChange('password')}
+                value={password}
+                secureTextEntry
+                infoText="Agora digite sua senha"
+                errorMessage={errors?.password}
+              />
+              <KeyboardSpacer topSpacing={screenPercentage(10)} />
+            </Form>
           </Container>
           <LoginButton onPress={handleSubmit} disabled={isLoading}>
             {!isLoading ? (
