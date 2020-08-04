@@ -44,7 +44,7 @@ const Login: React.FC = () => {
   };
 
   const loginFail = (): void => {
-    Alert.alert('Login invalido!', 'Usuario ou senha não cadastrado.');
+    Alert.alert('Login invalido!', 'Email ou senha não cadastrado.');
   };
 
   const login = (password: string, successCallback: () => void): void => {
